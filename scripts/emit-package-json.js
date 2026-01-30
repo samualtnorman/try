@@ -8,9 +8,7 @@ const { private: _, dependencies, devDependencies, engines: { pnpm, ...engines }
 
 makeDirectorySync("dist", { recursive: true })
 
-writeFileSync(
-	"dist/package.json",
-	JSON.stringify({ ...packageJson, engines, exports: await getExports(`.d.ts`, `.js`), dependencies }, undefined, "\t")
-)
+const exports = await getExports(`.d.ts`, `.js`)
 
+writeFileSync("dist/package.json", JSON.stringify({ ...packageJson, engines, exports, dependencies }, undefined, "\t"))
 process.exit()
