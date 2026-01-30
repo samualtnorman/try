@@ -3,7 +3,8 @@ import { mkdirSync as makeDirectorySync, writeFileSync } from "fs"
 import packageJson_ from "../package.json" with { type: "json" }
 import { getExports } from "./lib/exports.js"
 
-const { private: _, dependencies, devDependencies, engines: { pnpm, ...engines }, ...packageJson } = packageJson_
+const { private: _, dependencies, devDependencies, engines: { pnpm, ...engines }, ...packageJson } =
+	/** @type {typeof packageJson_ & { dependencies?: Record<string, string> }} */ (packageJson_)
 
 makeDirectorySync("dist", { recursive: true })
 
