@@ -1,8 +1,10 @@
 #!/bin/sh
 set -ex
 export TARGET=npm
+export JSR_NAME=@sn/try
 rm -rf dist
 ./rolldown.config.js
 scripts/emit-dts.sh
 scripts/emit-package-json.js
-cp LICENSE README.md dist
+scripts/eta.js < src/readme.md > dist/README.md
+cp LICENSE dist
