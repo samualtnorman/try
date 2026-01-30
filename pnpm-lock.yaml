@@ -13,15 +13,6 @@ importers:
 
   .:
     devDependencies:
-      '@babel/plugin-syntax-typescript':
-        specifier: ^7.28.6
-        version: 7.28.6(@babel/core@7.24.6)
-      '@rollup/plugin-babel':
-        specifier: ^6.1.0
-        version: 6.1.0(@babel/core@7.24.6)(@types/babel__core@7.20.5)(rollup@4.57.1)
-      '@samual/lib':
-        specifier: ^0.13.0
-        version: 0.13.0
       '@samual/rolldown-config':
         specifier: jsr:0.0.1-4661ba4
         version: '@jsr/samual__rolldown-config@0.0.1-4661ba4(prettier@3.8.1)(rollup@4.57.1)'
