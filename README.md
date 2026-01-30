@@ -16,3 +16,9 @@ import { tryCatch } from "@samual/try"
 
 const foo = tryCatch(() => callback(), error => 0)
 ```
+
+---
+This package is available on [JSR][jsr] and [NPM][npm].
+
+[npm]: https://www.npmjs.com/package/@samual/try
+[jsr]: https://jsr.io/@sn/try
