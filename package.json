@@ -1,0 +1,38 @@
+{
+	"name": "@samual/try",
+	"version": "0.0.0",
+	"description": "Try",
+	"keywords": [
+		"try"
+	],
+	"homepage": "https://github.com/samualtnorman/try#readme",
+	"bugs": {
+		"url": "https://github.com/samualtnorman/try/issues",
+		"email": "me@samual.uk"
+	},
+	"license": "MIT",
+	"author": "Samual Norman <me@samual.uk> (https://samual.uk/)",
+	"repository": "github:samualtnorman/try",
+	"type": "module",
+	"devDependencies": {
+		"@babel/plugin-syntax-typescript": "^7.28.6",
+		"@rollup/plugin-babel": "^6.1.0",
+		"@samual/lib": "^0.13.0",
+		"@samual/rolldown-config": "jsr:0.0.1-4661ba4",
+		"@sn/assert": "jsr:0.0.1-da0fbad",
+		"@total-typescript/ts-reset": "^0.6.1",
+		"@types/node": "~20.10.8",
+		"@types/semver": "^7.7.1",
+		"babel-plugin-here": "^1.0.2",
+		"eta": "^4.5.0",
+		"jsr": "^0.14.1",
+		"rolldown": "1.0.0-rc.2",
+		"semver": "^7.7.3",
+		"typescript": "^5.9.3"
+	},
+	"engines": {
+		"node": "^20.10 || ^22 || ^24 || >=25",
+		"pnpm": "^10"
+	},
+	"private": true
+}

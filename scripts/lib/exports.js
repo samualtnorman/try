@@ -1,0 +1,25 @@
+import { expect } from "@sn/assert"
+import { readdir as readFolder } from "fs/promises"
+import Path from "path"
+/** @import { Dirent } from "fs" */
+
+const getDirentParentPath = (/** @type {Dirent} */ dirent) => expect(dirent.parentPath ?? dirent.path)
+
+export const getExports = async (
+	/** @type {string} */ queryFileExtension,
+	/** @type {string} */ outputFileExtension = queryFileExtension
+) => /** @type {Record<string, string>} */ ({
+	".": `./default${outputFileExtension}`,
+	...Object.fromEntries(
+		(await readFolder(`dist`, { withFileTypes: true, recursive: true }))
+			.filter(dirent => dirent.isFile())
+			.map(dirent => Path.join(getDirentParentPath(dirent), dirent.name))
+			.filter(path => path != `dist/default${queryFileExtension}` && path != `dist/internal${queryFileExtension}` && path.endsWith(queryFileExtension))
+			.sort()
+			.map(path => {
+				const sliced = `.${path.slice(4, -queryFileExtension.length)}`
+
+				return [ sliced, sliced + outputFileExtension ]
+			})
+	)
+})
